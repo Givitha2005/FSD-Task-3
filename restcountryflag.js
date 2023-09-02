@@ -3,7 +3,7 @@
 var request = new XMLHttpRequest();
 
 // STEP-2: Opening a connection
-request.open("GET", "https://restcountries.com/v2/all",true);
+request.open("GET", "https://restcountries.com/v3.1/all",true);
 
 // STEP-3: Sending a request
 request.send();
@@ -14,7 +14,7 @@ request.onload = function(){
         var data = JSON.parse(request.responseText);
         // response as string
         for (let i = 0; i <data.length; i++){
-console.log(`Country: ${data[i].name};
+console.log(`Country: ${data[i].name.common};
 Flag: ${data[i].flags.svg}`)
         }
 
